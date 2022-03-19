@@ -304,16 +304,26 @@ class Table: ObservableObject{
             }
             maxCell.fillCell(player: playerTwo)
         } else {
-            var maxCell: Cell = vacant[0]
+            var maxRow: Int = vacant[0].row
+            var maxCol: Int = vacant[0].column
             var max: Double = 0
-            let vacantCopy = vacant.map{$0}
+            let def = scheme
+            scheme = def.map { $0.map{$0.copy()} } as! [[Cell]]
+            var vacantCopy: [Cell] = []
+            for row in 0...7{
+                for column in 0...7 {
+                    if scheme[row][column].isVacantNow == true{
+                        vacantCopy.append(scheme[row][column])
+                    }
+                }
+            }
             for cell in vacantCopy {
                 var sum = countProfit(cell: cell, player: playerTwo)
-                let schemeCopy = scheme.map { $0.map{$0.copy()} }
                 cell.fillCell(player: playerTwo)
                 var maxSec: Double = 0
-                for _ in vacant {
-                    let sumSec = countProfit(cell: cell, player: playerOne)
+                setVacant(player: playerOne)
+                for cellCopy in vacantCopy {
+                    let sumSec = countProfit(cell: cellCopy, player: playerOne)
                     if sumSec > max{
                         maxSec = sumSec
                     }
@@ -321,12 +331,13 @@ class Table: ObservableObject{
                 sum -= maxSec
                 if sum > max{
                     max = sum
-                    maxCell = cell
+                    maxRow = cell.row
+                    maxCol = cell.column
                 }
-                scheme = schemeCopy as! [[Cell]]
+                scheme = def
                 setVacant(player: playerTwo)
             }
-            maxCell.fillCell(player: playerTwo)
+            scheme[maxRow][maxCol].fillCell(player: playerTwo)
         }
     }
     
