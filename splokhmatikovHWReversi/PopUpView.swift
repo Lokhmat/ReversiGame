@@ -46,7 +46,7 @@ struct PopUpView: View {
                             .foregroundColor(Color.black)
                             .background(Color.clear)
                             .font(Font.system(size: 23, weight: .semibold))
-                    }).buttonStyle(PlainButtonStyle())
+                    }).buttonStyle(PlainButtonStyle()).background(Color(uiColor: #colorLiteral(red: 0.836, green: 0.836, blue: 0.836, alpha:1))).frame(width: 100, height: 30, alignment: .center).cornerRadius(30)
                 }
                 .frame(maxWidth: 300)
                 .cornerRadius(50)

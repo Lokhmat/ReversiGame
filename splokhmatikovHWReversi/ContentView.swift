@@ -28,10 +28,13 @@ struct SquareView : View {
 }
 
 struct ContentView: View {
-    
-    @ObservedObject private var field = Table.getTable(first: "Player", second: "IPhone", hard: false)
+    @ObservedObject public var field: Table
     private var showPopUp: Bool = Table.getTableWithoutChecks().shouldFinish
     private var turn: Bool = true
+    
+    public init (field: Table) {
+        self.field = field
+    }
     
     var body: some View{
         VStack {
@@ -53,9 +56,9 @@ struct ContentView: View {
     }
     
 }
-
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(hard: false)
     }
-}
+}*/

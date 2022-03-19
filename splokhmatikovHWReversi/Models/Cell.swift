@@ -7,7 +7,12 @@
 
 import Foundation
 
-class Cell: ObservableObject{
+class Cell: ObservableObject, NSCopying{
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Cell(occupiedBy: occupiedBy, isVacantNow: isVacantNow, row: row, column: column)
+    }
+    
     @Published var occupiedBy: Player?
     @Published var isVacantNow: Bool
     var row: Int

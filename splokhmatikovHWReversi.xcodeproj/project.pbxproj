@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F615536B27E62A5D00361838 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615536A27E62A5D00361838 /* MenuView.swift */; };
+		F615537027E6433100361838 /* Score.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F615536E27E6433100361838 /* Score.xcdatamodeld */; };
 		F61CD45C27D77B7C00CEDBC8 /* splokhmatikovHWReversiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CD45B27D77B7C00CEDBC8 /* splokhmatikovHWReversiApp.swift */; };
 		F61CD45E27D77B7C00CEDBC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CD45D27D77B7C00CEDBC8 /* ContentView.swift */; };
 		F61CD46027D77B7D00CEDBC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61CD45F27D77B7D00CEDBC8 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F615536A27E62A5D00361838 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		F615536F27E6433100361838 /* Score.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Score.xcdatamodel; sourceTree = "<group>"; };
 		F61CD45827D77B7C00CEDBC8 /* splokhmatikovHWReversi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splokhmatikovHWReversi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61CD45B27D77B7C00CEDBC8 /* splokhmatikovHWReversiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splokhmatikovHWReversiApp.swift; sourceTree = "<group>"; };
 		F61CD45D27D77B7C00CEDBC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				F61CD45F27D77B7D00CEDBC8 /* Assets.xcassets */,
 				F61CD46127D77B7D00CEDBC8 /* Preview Content */,
 				F61CD47027DA810B00CEDBC8 /* PopUpView.swift */,
+				F615536A27E62A5D00361838 /* MenuView.swift */,
+				F615536E27E6433100361838 /* Score.xcdatamodeld */,
 			);
 			path = splokhmatikovHWReversi;
 			sourceTree = "<group>";
@@ -157,11 +163,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F615536B27E62A5D00361838 /* MenuView.swift in Sources */,
 				F61CD45E27D77B7C00CEDBC8 /* ContentView.swift in Sources */,
 				F61CD46D27D7BFD800CEDBC8 /* Cell.swift in Sources */,
 				F61CD45C27D77B7C00CEDBC8 /* splokhmatikovHWReversiApp.swift in Sources */,
 				F61CD47127DA810C00CEDBC8 /* PopUpView.swift in Sources */,
 				F61CD46F27D7BFFC00CEDBC8 /* Direction.swift in Sources */,
+				F615537027E6433100361838 /* Score.xcdatamodeld in Sources */,
 				F61CD46B27D77FF300CEDBC8 /* Field.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +373,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F615536E27E6433100361838 /* Score.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F615536F27E6433100361838 /* Score.xcdatamodel */,
+			);
+			currentVersion = F615536F27E6433100361838 /* Score.xcdatamodel */;
+			path = Score.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F61CD45027D77B7C00CEDBC8 /* Project object */;
 }
