@@ -436,13 +436,13 @@ class Table: ObservableObject{
     }
     
     public static func reset(field: Table){
+        ReversiClient.getBest(table: field)
         field.scheme = Table(first: field.playerOne.name, second: field.playerTwo.name, hard: field.hard).getSceme()
         field.shouldFinish = false
         field.initField()
-        
     }
     
-    private func saveMaxResult(){
+    func saveMaxResult(){
         let fetchRequest: NSFetchRequest<Score>
         fetchRequest = Score.fetchRequest()
         do {
@@ -465,11 +465,8 @@ class Table: ObservableObject{
             if score.isEmpty{
                 return
             }
-            /*
             bestPlayerOne = Int(score[0].maxValueUser)
-            bestPlayerTwo = Int(score[0].maxValueIphone) Fetch from internet or CoreData
-             */
-            ReversiClient.getBest(table: self)
+            bestPlayerTwo = Int(score[0].maxValueIphone)
         } catch{return}
     }
 }

@@ -16,8 +16,11 @@ class ReversiClient{
                 do {
                     let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Int]
                     if (json != nil){
-                        table.bestPlayerOne = json!["User"]
-                        table.bestPlayerTwo = json!["Iphone"]
+                        if (json!["User"] ?? -1 > table.bestPlayerOne ?? -1){
+                            table.bestPlayerOne = json!["User"]
+                            table.bestPlayerTwo = json!["Iphone"]
+                            table.saveMaxResult()
+                        }
                     }
                 } catch{
                     print("Kek")
